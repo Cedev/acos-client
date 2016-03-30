@@ -116,11 +116,11 @@ class VirtualPort(base.BaseV30):
                              exclude_minimize=exclu,
                              **kwargs)
         except ae.AxapiJsonFormatError:
-            return self.self._set(virtual_server_name,
-                                  name, protocol, port, service_group_name,
-                                  s_pers_name, c_pers_name, status, True,
-                                  exclude_minimize=[],
-                                  **kwargs)
+            return self._set(virtual_server_name,
+                             name, protocol, port, service_group_name,
+                             s_pers_name, c_pers_name, status, True,
+                             exclude_minimize=[],
+                             **kwargs)
 
     def delete(self, virtual_server_name, name, protocol, port):
         url = self.url_server_tmpl.format(name=virtual_server_name)
